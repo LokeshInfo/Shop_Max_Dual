@@ -1,6 +1,7 @@
 package com.icss.shopmax.Sub_Adapter;
 
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,6 +71,9 @@ public class Sub_Hospital_Adapter extends RecyclerView.Adapter<Sub_Hospital_Adap
                 public void onClick(View v) {
                     AppCompatActivity activ = (AppCompatActivity) v.getContext();
                     Fragment fragment = new Patient_Details_Fragment();
+                    Bundle args = new Bundle();
+                    args.putString("h_id",dlist.get(i).getHospital_id());
+                    args.putString("d_id",dlist.get(i).getDoctor_id());
                     FragmentManager fragmentmanager =activ.getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction =fragmentmanager.beginTransaction();
                     fragmentTransaction.addToBackStack(fragment.getTag());

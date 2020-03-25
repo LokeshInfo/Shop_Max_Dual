@@ -19,6 +19,7 @@ import com.google.gson.Gson;
 import com.icss.shopmax.API_Retro.Api_Para;
 import com.icss.shopmax.API_Retro.Retrofit_Client;
 import com.icss.shopmax.A_Model.Login_Model;
+import com.icss.shopmax.A_Model.Login_mmodel;
 import com.icss.shopmax.Apputils.AppPrefrences;
 import com.icss.shopmax.R;
 import com.icss.shopmax.ui.MainActivity;
@@ -65,19 +66,18 @@ public class Login_Activity extends AppCompatActivity
     }
 
 
-
     private void Click_Listeners(){
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*if (validate()){
+                if (validate()){
                     CALL_API();
                 }
                 else{
-                }*/
-                Intent in = new Intent(Login_Activity.this, MainActivity.class);
+                }
+               /* Intent in = new Intent(Login_Activity.this, MainActivity.class);
                 startActivity(in);
-                finish();
+                finish();*/
             }
         });
         register.setOnClickListener(new View.OnClickListener() {
@@ -129,31 +129,31 @@ public class Login_Activity extends AppCompatActivity
         dialog.setCancelable(true);
         dialog.show();
 
-        ApiService.CALL_LOGIN(usernm,pass).enqueue(new Callback<Login_Model>() {
+        ApiService.CALL_LOGIN(usernm,pass).enqueue(new Callback<Login_mmodel>() {
             @Override
-            public void onResponse(Call<Login_Model> call, Response<Login_Model> response) {
+            public void onResponse(Call<Login_mmodel> call, Response<Login_mmodel> response) {
                 dialog.dismiss();
                 Log.e("Call_Login RESPONSE.", "" + new Gson().toJson(response.body()));
 
-                if (response.body().getResponce()){
+                if (response.body().getResponse().equals("true")){
 
                     AppPrefrences.setLogin_status(activity,true);
-                    AppPrefrences.setUserid(activity,response.body().getData().getUser_id());
-                    AppPrefrences.setName(activity,response.body().getData().getName());
-                    AppPrefrences.setMail(activity,response.body().getData().getEmail());;
-                    AppPrefrences.setMobile(activity,response.body().getData().getMobile());
+                    AppPrefrences.setUserid(activity,response.body().getUser_id());
+                    AppPrefrences.setName(activity,response.body().getUsername());
+                    AppPrefrences.setMail(activity,response.body().getEmail());;
+                    AppPrefrences.setMobile(activity,response.body().getPhone());
 
                     Intent in = new Intent(Login_Activity.this, MainActivity.class);
                     startActivity(in);
                     finish();
                 }
-                else if (!response.body().getResponce()){
-                    Toast.makeText(Login_Activity.this, ""+response.body().getError(), Toast.LENGTH_SHORT).show();
+                else if (!response.body().getResponse().equals("true")){
+                    Toast.makeText(Login_Activity.this, ""+response.body().getError_msg(), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<Login_Model> call, Throwable t) {
+            public void onFailure(Call<Login_mmodel> call, Throwable t) {
 
                 dialog.dismiss();
                 Log.e("CALL_LOGIN Error "," "+t.getMessage());

@@ -15,12 +15,12 @@ public interface BaseUrl {
     String image_hospitals = "https://www.lotusenterprises.net/shopmax_store/uploads/hospital_image/";
 
     String get_doctors ="get_doctors/hospital";
+    String book_doctor_appointment ="add_booking/patient_appointment";
     String image_doctor = "https://www.lotusenterprises.net/shopmax_store/uploads/doctor_image/";
 
     // Doctors
 
-
-    String login = "login";
+    String login = "login/do_login";
     String registration = "registration";
     String update_profile = "update_profile";
     String sale_category = "sale_category";
