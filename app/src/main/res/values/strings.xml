@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">Shop max</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_profile">My Profile</string>
+    <string name="menu_wallet">My Wallet</string>
+    <string name="menu_services">My Services</string>
+    <string name="menu_payoption">Payment Option</string>
+    <string name="menu_offer">My Offer</string>
+    <string name="menu_contactus">Contact us</string>
+    <string name="menu_aboutus">About us</string>
+    <string name="menu_faq">FAQ</string>
+    <string name="menu_logout">Logout</string>
+    <string name="menu_rat">Rate Application</string>
+    <string name="menu_share">Share Application</string>
+    <string name="email_mobile">Email or Phone</string>
+
+    <string name="entry_forgot">Please enter your email or phone number to reset your new password.</string>
+    <string name="talk_customer">Talk to the customer service agent</string>
+    <string name="contetn">Service is a way to provide raw content (in other words, without the need
+        for a specific human compatible representation, such as HTML) in a way that other systems can make use of it.
+        Content as a Service is not meant for direct human consumption, but rather for other platforms to consume and
+        make use of the content according to their particular needs. This happens usually on the cloud, with a centralized
+        platform which can be globally accessible and provides a standard format for your content. With Content as a Service,
+        you centralize your content into a single repository,
+        where you can manage it, categorize it, make it available to others, search for it, or do whatever you wish with it.</string>
+
+    <string name="let_us_konw_request">Let us know your special request if any</string>
+
+    <string name="initiate_request">Inititate your request / Our Customer Service Agent
+        will contact you with a best available rate and service
+    </string>
+
+    <string name="greetings">
+        Greetings from Shop Max ( Nesco Group ) </string>
+    <string name="greetings_sir">
+        \t\t\t Sir, we have processed your request and based on that please find the best offer in the market as given below.
+    </string>
+
+    <string name="greetings_sir2">
+        \t\t\t Sir, we have processed your request and based on that we have arranged a service team to assist you.
+    </string>
+
+    <string name="greetings_si3">
+        \t\t\t Sir, we have processed your request and based on that please find below.
+    </string>
+
+    <string name="payment_after">
+        Please note that Payment can be done after service By Card/Wallet money or Cash.
+    </string>
+
+
+    <string name="to_confirm">
+        To confirm your request kindly proceed with Payment
+    </string>
+
+    <string name="other_services_content">
+        \t\t\t Dear Customer in order to assist you we have included all major services in our application.
+        However if you are not finding that you required, kindly let us know to get you the same.
+        Your convenience is very important for us.
+    </string>
+<string-array name="category">
+    <item>Select Brand</item>
+    <item>Basmati Rice</item>
+    <item>Matti Rice</item>
+    <item>Jaya Rice</item>
+    <item>Ponni Rice</item>
+</string-array>
+</resources>

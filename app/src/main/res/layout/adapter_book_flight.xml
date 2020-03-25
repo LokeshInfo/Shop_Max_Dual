@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    app:cardElevation="6dp"
+    app:cardCornerRadius="14dp"
+    android:layout_marginTop="11dp"
+    android:layout_marginLeft="9dp"
+    android:layout_marginRight="9dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/tx_carname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                style="@style/bold_tx"
+                android:paddingStart="2dp"
+                android:hint="qatar"
+                android:textSize="10pt"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="10dp"
+                />
+            <TextView
+                android:id="@+id/tx_cartype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                style="@style/tx_vu"
+                android:hint="Flight number"
+                android:inputType="number"
+                android:paddingStart="2dp"
+                android:textSize="8pt"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                />
+
+            <TextView
+                android:id="@+id/ed_fromdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                style="@style/tx_vu"
+                android:hint="DD / MM / YYYY"
+                android:inputType="number"
+                android:paddingStart="2dp"
+                android:textSize="8pt"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:text="Departure Time :"
+                    android:textSize="8pt"
+                    android:paddingStart="2dp"
+                    android:singleLine="false"
+                    android:layout_marginTop="3dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:text="Arrival Time :"
+                    android:textSize="8pt"
+                    android:paddingStart="2dp"
+                    android:singleLine="false"
+                    android:layout_marginTop="3dp"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp">
+                <TextView
+                    android:id="@+id/tx_deptime"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:hint="dep time"
+                    android:textSize="8pt"
+                    android:paddingStart="2dp"
+                    android:singleLine="false"
+                    android:layout_marginTop="3dp"
+                    />
+                <TextView
+                    android:id="@+id/tx_arrtime"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    style="@style/tx_vu"
+                    android:hint="arrive time"
+                    android:paddingStart="2dp"
+                    android:textSize="8pt"
+                    android:singleLine="false"
+                    android:layout_marginTop="3dp"
+                    />
+
+            </LinearLayout>
+
+
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp">
+                <TextView
+                    android:id="@+id/tx_carprice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    style="@style/tx_vu"
+                    android:text="fare"
+                    android:paddingStart="2dp"
+                    android:layout_marginLeft="1dp"
+                    android:textSize="8pt"
+                    android:singleLine="false"
+                    android:layout_marginTop="3dp"
+                    />
+
+                <Button
+                    android:id="@+id/buttn_book"
+                    android:layout_width="130dp"
+                    android:layout_height="35dp"
+                    android:text="Book"
+                    android:background="@drawable/button"
+                    android:textColor="@color/white"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

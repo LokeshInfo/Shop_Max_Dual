@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:foreground="?android:selectableItemBackground"
+    android:clickable="true"
+    app:cardElevation="6dp"
+    app:cardCornerRadius="14dp"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp"
+    android:layout_marginTop="5pt"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp"
+        >
+
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/jimageSlider"
+            android:layout_width="match_parent"
+            android:layout_height="60pt"
+            app:sliderAutoCycleEnabled="false"
+            app:sliderCircularHandlerEnabled="true"
+            app:sliderIndicatorRadius="2dp"
+            app:sliderScrollTimeInSec="1"
+            app:sliderStartAutoCycle="true"
+            android:clickable="true"
+            />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/tx_salename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Electronic Items"
+            android:textColor="@color/black"
+            style="@style/bold_tx"
+            android:textSize="8pt"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:id="@+id/tx_saleamt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rs. 2000 /-"
+            android:textColor="@color/black"
+            style="@style/tx_vu"
+            android:textSize="8pt"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            />
+
+        <TextView
+            android:id="@+id/tx_saledesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rs. 2000 /-"
+            android:textColor="@color/black"
+            style="@style/tx_vu"
+            android:textSize="7pt"
+            android:singleLine="false"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            />
+    </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/rentcar_toolbar"
+        android:layout_width="match_parent"
+        android:background="@drawable/bck_app"
+        android:layout_height="?attr/actionBarSize"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="Rent a Car"
+        app:titleTextColor="@color/white"
+        style="@style/bold_tx"
+        app:navigationIcon="@drawable/ic_arrow_back_white"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rentcar_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/rentcar_toolbar"
+        />
+
+</RelativeLayout>

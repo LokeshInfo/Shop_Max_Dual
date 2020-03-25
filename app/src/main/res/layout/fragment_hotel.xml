@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/bold_tx"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/bck_app"
+        app:navigationIcon="@drawable/ic_arrow_back_white"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="Hotel Booking"
+        app:titleTextColor="@color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="0dp"
+        android:fillViewport="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="13dp"
+            android:orientation="vertical"
+            android:paddingBottom="10pt">
+
+            <EditText
+                android:id="@+id/ed_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/toolbar"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/edit_text_box"
+                android:drawableRight="@drawable/ic_search_black_24dp"
+                android:hint="Search"
+                android:paddingStart="15dp"
+                android:paddingLeft="4dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Select Hotel"
+                android:textColor="@color/black"
+                android:textSize="8pt" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5 star"
+                    android:textSize="8pt" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="4 star"
+                    android:textSize="8pt" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="3 star"
+                    android:textSize="8pt" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Budget Accommodation"
+                android:textColor="@color/black"
+                android:textSize="8pt" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Country"
+                android:textColor="@color/black"
+                android:textSize="8pt" />
+
+            <EditText
+                android:id="@+id/ht_mail"
+                style="@style/ed_txt"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="3dp"
+                android:autoLink="none"
+                android:autoText="false"
+                android:background="@drawable/edit_text"
+                android:drawablePadding="10dp"
+                android:focusableInTouchMode="true"
+                android:hint="Enter Country"
+                android:inputType="text"
+                android:padding="2dp"
+                android:paddingStart="24dp"
+                android:paddingLeft="24dp"
+                android:paddingEnd="15dp"
+                android:paddingRight="15dp"
+                android:singleLine="true"
+                android:textColorHint="@color/light_grey" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="State"
+                android:textColor="@color/black"
+                android:textSize="8pt" />
+
+            <EditText
+                android:id="@+id/ht_mobile"
+                style="@style/ed_txt"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="3dp"
+                android:autoLink="none"
+                android:autoText="false"
+                android:background="@drawable/edit_text"
+                android:drawablePadding="10dp"
+                android:focusableInTouchMode="true"
+                android:hint="Enter State"
+                android:inputType="text"
+                android:padding="2dp"
+                android:paddingStart="24dp"
+                android:paddingLeft="24dp"
+                android:paddingEnd="15dp"
+                android:paddingRight="15dp"
+                android:singleLine="true"
+                android:textColorHint="@color/light_grey" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="City"
+                android:textColor="@color/black"
+                android:textSize="8pt" />
+
+            <EditText
+                android:id="@+id/ht_city"
+                style="@style/ed_txt"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="3dp"
+                android:autoLink="none"
+                android:autoText="false"
+                android:background="@drawable/edit_text"
+                android:drawablePadding="10dp"
+                android:focusableInTouchMode="true"
+                android:hint="Enter Address"
+                android:inputType="text"
+                android:padding="2dp"
+                android:paddingStart="24dp"
+                android:paddingLeft="24dp"
+                android:paddingEnd="15dp"
+                android:paddingRight="15dp"
+                android:singleLine="true"
+                android:textColorHint="@color/light_grey" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="Check in Date"
+                android:textColor="@color/black"
+                android:textSize="8pt" />
+
+            <EditText
+                android:id="@+id/ed_fromdate"
+                style="@style/ed_txt"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="3dp"
+                android:autoLink="none"
+                android:autoText="false"
+                android:background="@drawable/edit_text"
+                android:clickable="true"
+                android:drawableRight="@drawable/ic_perm_contact_calendar"
+                android:drawablePadding="10dp"
+                android:editable="false"
+                android:focusable="false"
+                android:hint="DD / MM / YYYY"
+                android:inputType="text"
+                android:padding="2dp"
+                android:paddingStart="24dp"
+                android:paddingLeft="24dp"
+                android:paddingEnd="15dp"
+                android:paddingRight="15dp"
+                android:singleLine="true"
+                android:textColorHint="@color/light_grey" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Check out Date"
+                android:textColor="@color/black"
+                android:textSize="8pt" />
+
+            <EditText
+                android:id="@+id/ed_todate"
+                style="@style/ed_txt"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="3dp"
+                android:autoLink="none"
+                android:autoText="false"
+                android:background="@drawable/edit_text"
+                android:clickable="true"
+                android:drawableRight="@drawable/ic_perm_contact_calendar"
+                android:drawablePadding="10dp"
+                android:editable="false"
+                android:focusable="false"
+                android:hint="DD / MM / YYYY"
+                android:inputType="text"
+                android:padding="2dp"
+                android:paddingStart="24dp"
+                android:paddingLeft="24dp"
+                android:paddingEnd="15dp"
+                android:paddingRight="15dp"
+                android:singleLine="true"
+                android:textColorHint="@color/light_grey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="3"
+                android:paddingStart="0dp"
+                android:layout_marginStart="0dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="Adult"
+                        android:textColor="@color/black"
+                        android:textSize="10pt" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/fdremove_item"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="0dp"
+                        android:src="@drawable/ic_remove_circle" />
+
+                    <TextView
+                        android:id="@+id/fd_qty_item"
+                        android:layout_width="wrap_content"
+                        android:text="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="8pt" />
+
+                    <ImageView
+                        android:id="@+id/fdadd_item"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add_circle" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="Children"
+                        android:textColor="@color/black"
+                        android:textSize="10pt" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/fdremove_item2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="0dp"
+                            android:src="@drawable/ic_remove_circle" />
+
+                        <TextView
+                            android:id="@+id/fd_qty_item2"
+                            android:layout_width="wrap_content"
+                            android:text="1"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="8pt" />
+
+                        <ImageView
+                            android:id="@+id/fdadd_item2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_add_circle" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="Rooms"
+                        android:textColor="@color/black"
+                        android:textSize="10pt" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/fdremove_item3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="0dp"
+                            android:src="@drawable/ic_remove_circle" />
+
+                        <TextView
+                            android:id="@+id/fd_qty_item3"
+                            android:layout_width="wrap_content"
+                            android:text="1"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="8pt" />
+
+                        <ImageView
+                            android:id="@+id/fdadd_item3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_add_circle" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/buttn_calc"
+                style="@style/bold_tx"
+                android:layout_width="235dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15pt"
+                android:background="@drawable/button"
+                android:text="Calculate No. of Days"
+                android:textColor="@color/white"
+                android:textSize="8pt" />
+
+            <Button
+                android:id="@+id/buttn_search"
+                style="@style/bold_tx"
+                android:layout_width="165dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10pt"
+                android:background="@drawable/button"
+                android:text="Search"
+                android:textColor="@color/white"
+                android:textSize="8pt" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

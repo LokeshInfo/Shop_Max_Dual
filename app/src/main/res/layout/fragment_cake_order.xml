@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/cake_toolbar"
+        android:layout_width="match_parent"
+        android:background="@drawable/bck_app"
+        android:layout_height="?attr/actionBarSize"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="Cake &amp; Homely Food"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="@drawable/ic_arrow_back_white"
+        />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/cake_toolbar"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="14dp"
+                android:layout_margin="4dp"
+                app:cardElevation="5dp"
+                android:padding="2dp"
+                >
+                <LinearLayout
+                    android:id="@+id/cakelyt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="7dp"
+                    android:layout_margin="3dp"
+                    >
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="60pt"
+                        android:scrollbars="none"
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:padding="4dp"
+                            >
+
+                            <ImageView
+                                android:id="@+id/gi1"
+                                android:layout_width="100pt"
+                                android:layout_height="fill_parent"
+                                android:adjustViewBounds="true"
+                                android:layout_gravity="center"
+                                android:scaleType="fitXY"
+                                />
+                            <ImageView
+                                android:id="@+id/gi2"
+                                android:layout_width="100pt"
+                                android:layout_height="fill_parent"
+                                android:adjustViewBounds="true"
+                                android:layout_gravity="center"
+                                android:scaleType="fitXY"
+                                android:paddingLeft="3dp"
+                                />
+                            <ImageView
+                                android:id="@+id/gi3"
+                                android:layout_width="100pt"
+                                android:layout_height="fill_parent"
+                                android:adjustViewBounds="true"
+                                android:layout_gravity="center"
+                                android:scaleType="fitXY"
+                                android:paddingLeft="3dp"
+                                />
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                    <TextView
+                        android:id="@+id/tx_salename"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cake Order"
+                        android:textColor="@color/dark_blue"
+                        style="@style/bold_tx"
+                        android:textSize="8pt"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="10dp"
+                        android:textAlignment="center"
+                        />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="14dp"
+                android:layout_margin="4dp"
+                android:elevation="5dp"
+                android:padding="2dp"
+                >
+                <LinearLayout
+                    android:id="@+id/homelyt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="7dp"
+                    android:layout_margin="3dp"
+                    >
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="60pt"
+                        android:scrollbars="none"
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:padding="4dp"
+                            >
+
+                            <ImageView
+                                android:id="@+id/gi11"
+                                android:layout_width="100pt"
+                                android:layout_height="fill_parent"
+                                android:adjustViewBounds="true"
+                                android:layout_gravity="center"
+                                android:scaleType="fitXY"
+                                />
+                            <ImageView
+                                android:id="@+id/gi22"
+                                android:layout_width="100pt"
+                                android:layout_height="fill_parent"
+                                android:adjustViewBounds="true"
+                                android:layout_gravity="center"
+                                android:scaleType="fitXY"
+                                android:paddingLeft="3dp"
+                                />
+                            <ImageView
+                                android:id="@+id/gi33"
+                                android:layout_width="100pt"
+                                android:layout_height="fill_parent"
+                                android:adjustViewBounds="true"
+                                android:layout_gravity="center"
+                                android:scaleType="fitXY"
+                                android:paddingLeft="3dp"
+                                />
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Homely Food"
+                        android:textColor="@color/dark_blue"
+                        style="@style/bold_tx"
+                        android:textSize="8pt"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="10dp"
+                        android:textAlignment="center"
+                        />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="14dp"
+                android:layout_margin="4dp"
+                android:elevation="5dp"
+                android:padding="2dp"
+                >
+                <LinearLayout
+                    android:id="@+id/otherslyt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="7dp"
+                    android:layout_margin="3dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="100pt"
+                        android:layout_height="100dp"
+                        android:adjustViewBounds="true"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/shopping_basket"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Others"
+                        android:textColor="@color/dark_blue"
+                        style="@style/bold_tx"
+                        android:textSize="8pt"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="10dp"
+                        android:textAlignment="center"
+                        />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

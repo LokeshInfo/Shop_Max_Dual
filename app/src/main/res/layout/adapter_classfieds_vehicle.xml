@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    app:cardElevation="6dp"
+    android:layout_marginTop="11dp"
+    android:layout_marginBottom="11dp"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:id="@+id/layout"
+        >
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/about_us"
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/tx1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                style="@style/bold_tx"
+                android:text="Chervolet"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="8pt"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="10dp"
+                />
+            <TextView
+                android:id="@+id/tx2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                style="@style/tx_vu"
+                android:layout_gravity="center"
+                android:text="ls"
+                android:textSize="8pt"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                />
+
+            <TextView
+                android:id="@+id/tx3"
+                style="@style/tx_vu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:singleLine="false"
+                android:text="40000"
+                android:textColor="@color/black"
+                android:textSize="8pt" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingBottom="7dp"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:background="@drawable/bck_app"
+        android:layout_height="?attr/actionBarSize"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="Electronics"
+        style="@style/bold_tx"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="@drawable/ic_arrow_back_white"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/subsale_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/talk_customer"
+            android:textColor="@color/black"
+            android:textSize="8pt"
+            android:layout_marginTop="20dp"
+            android:drawablePadding="10dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:drawableRight="@drawable/ic_call"
+            />
+
+        <Button
+            android:id="@+id/ssle_proceed"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Proceed Payment"
+            android:textColor="@color/white"
+            android:textSize="8pt"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/button"
+            android:layout_marginTop="20dp"
+            />
+
+    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

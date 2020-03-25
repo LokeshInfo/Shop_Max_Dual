@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/adgrtoolbar"
+        android:layout_width="match_parent"
+        android:background="@drawable/bck_app"
+        android:layout_height="?attr/actionBarSize"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="Add Grocery"
+        app:titleTextColor="@color/white"
+        style="@style/bold_tx"
+        app:navigationIcon="@drawable/ic_arrow_back_white"
+        />
+
+    <LinearLayout
+        android:id="@+id/lyt11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/adgrtoolbar"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Product Name"
+        android:textColor="@color/black"
+        android:textSize="8pt"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <EditText
+        android:id="@+id/pd_nm"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="3dp"
+        android:hint="Enter Product"
+        android:textColorHint="@color/light_grey"
+        android:background="@drawable/edit_text"
+        android:paddingEnd="15dp"
+        android:paddingRight="15dp"
+        android:singleLine="true"
+        android:padding="2dp"
+        android:focusableInTouchMode="true"
+        android:paddingStart="24dp"
+        android:paddingLeft="24dp"
+        android:drawablePadding="10dp"
+        style="@style/ed_txt"
+        android:autoLink="none"
+        android:inputType="text"
+        android:autoText="false"
+        />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Product Unit"
+            android:textColor="@color/black"
+            android:textSize="8pt"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            />
+
+        <EditText
+            android:id="@+id/pd_unt"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="3dp"
+            android:hint="Enter Product Unit"
+            android:textColorHint="@color/light_grey"
+            android:background="@drawable/edit_text"
+            android:paddingEnd="15dp"
+            android:paddingRight="15dp"
+            android:singleLine="true"
+            android:padding="2dp"
+            android:focusableInTouchMode="true"
+            android:paddingStart="24dp"
+            android:paddingLeft="24dp"
+            android:drawablePadding="10dp"
+            style="@style/ed_txt"
+            android:autoLink="none"
+            android:inputType="text"
+            android:autoText="false"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Product Quantity"
+            android:textColor="@color/black"
+            android:textSize="8pt"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            />
+
+        <EditText
+            android:id="@+id/pd_qty"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="3dp"
+            android:hint="Enter Product Quantity"
+            android:textColorHint="@color/light_grey"
+            android:background="@drawable/edit_text"
+            android:paddingEnd="15dp"
+            android:paddingRight="15dp"
+            android:singleLine="true"
+            android:padding="2dp"
+            android:focusableInTouchMode="true"
+            android:paddingStart="24dp"
+            android:paddingLeft="24dp"
+            android:drawablePadding="10dp"
+            style="@style/ed_txt"
+            android:autoLink="none"
+            android:inputType="number"
+            android:autoText="false"
+            />
+
+        <Button
+            android:id="@+id/buttn_add_pd"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/button"
+            android:layout_marginTop="15pt"
+            android:text="Add  Product"
+            android:textColor="@color/white"
+            android:textSize="8pt"
+            style="@style/bold_tx"
+            />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/txheading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Product List"
+        android:textColor="@color/black"
+        android:textSize="8pt"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/lyt11"
+        android:textAlignment="center"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/adgr_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/txheading"
+        />
+
+</RelativeLayout>

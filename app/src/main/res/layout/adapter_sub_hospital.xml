@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="6dp"
+    app:cardCornerRadius="14dp"
+    android:layout_marginTop="11dp"
+    android:layout_marginLeft="9dp"
+    android:layout_marginRight="9dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp"
+            android:padding="2dp">
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/doc_profile_img"
+                    app:civ_border_color="@color/cream"
+                    app:civ_border_width="2dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="9dp"
+                    />
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="4dp"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    >
+                    <TextView
+                        android:id="@+id/doc_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="Dr. AK Singh"
+                        style="@style/bold_tx"
+                        android:textSize="9pt"
+                        android:singleLine="true"
+                        />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/hospital_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Apple Hospital "
+                    style="@style/bold_tx"
+                    android:textSize="9pt"
+                    android:singleLine="true"
+                    android:visibility="gone"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="2dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            >
+
+
+            <TextView
+                android:id="@+id/doc_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pediatric"
+                android:textSize="8pt"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/doc_fees"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Rs. 700"
+                android:textSize="8pt"
+                android:textColor="@color/black"
+                />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/buttn_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="Book Appnt. >>>"
+            android:textColor="@color/dark_blue"
+            android:textSize="9pt"
+            style="@style/bold_tx"
+            android:layout_gravity="end"
+            />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:cardCornerRadius="5dp"
+    android:elevation="4dp"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp"
+    android:layout_marginTop="5pt"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_marginLeft="7pt">
+
+    <TextView
+        android:id="@+id/wrname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="HOTEL NAME"
+        android:textColor="@color/black"
+        android:textSize="9pt"
+        style="@style/bold_tx"
+        android:gravity="start"
+        android:drawableLeft="@drawable/fountain_pen"
+        android:drawablePadding="10dp"
+        android:layout_marginTop="3dp"
+        />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="4pt"
+            >
+
+            <TextView
+                android:id="@+id/wr_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_info"
+                android:text="Preview"
+                android:textSize="9pt"
+                android:layout_alignParentStart="true"
+                android:textColor="@color/blue1"
+                android:drawablePadding="4dp"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:id="@+id/buttn_hire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hire >>>"
+                style="@style/bold_tx"
+                android:textSize="9pt"
+                android:textColor="@color/blue1"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingEnd="8dp"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
