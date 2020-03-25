@@ -1,23 +1,23 @@
 package com.icss.shopmax.A_Model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class Doc_Book_Model {
 
-    private List<Doc_Book_Data> data;
-
+    /*private Doc_Book_Data data;
+*/
+    @SerializedName("response")
+    @Expose
     private Boolean response;
 
+    @SerializedName("success_msg")
+    @Expose
     private String success_msg;
 
 
-    public List<Doc_Book_Data> getData() {
-        return data;
-    }
-
-    public void setData(List<Doc_Book_Data> data) {
-        this.data = data;
-    }
 
     public Boolean getResponse() {
         return response;

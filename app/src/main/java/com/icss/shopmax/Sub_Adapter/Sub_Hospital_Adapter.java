@@ -74,6 +74,7 @@ public class Sub_Hospital_Adapter extends RecyclerView.Adapter<Sub_Hospital_Adap
                     Bundle args = new Bundle();
                     args.putString("h_id",dlist.get(i).getHospital_id());
                     args.putString("d_id",dlist.get(i).getDoctor_id());
+                    fragment.setArguments(args);
                     FragmentManager fragmentmanager =activ.getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction =fragmentmanager.beginTransaction();
                     fragmentTransaction.addToBackStack(fragment.getTag());

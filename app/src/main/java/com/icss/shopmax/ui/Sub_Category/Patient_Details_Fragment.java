@@ -145,6 +145,7 @@ public class Patient_Details_Fragment extends Fragment
         dialog.show();
 
         user_id = AppPrefrences.getUserid(getActivity());
+        Log.e("Data Booking"," h_id "+hospital_id+" doc_id "+doctor_id+" user_id "+user_id);
 
         Retrofit_Client.getAPIService().Book_Doctor(user_id, hospital_id,doctor_id,name,mail,phone,gender,age,request).enqueue(new Callback<Doc_Book_Model>() {
             @Override
