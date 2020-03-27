@@ -27,12 +27,13 @@ public interface Api_Para {
 
     @FormUrlEncoded
     @POST(BaseUrl.registration)
-    Call<Register_Data> CALL_REGISTER(
-            @Field("name") String mobile_email,
+    Call<Login_mmodel> CALL_REGISTER(
+            @Field("username") String mobile_email,
+            @Field("surname") String surname,
             @Field("email") String email,
-            @Field("mobile") String mobile,
-            @Field("password") String password,
-            @Field("token_code") String t_code
+            @Field("phone") String mobile,
+            @Field("password1") String password,
+            @Field("password2") String password1
     );
 
     @GET(BaseUrl.sale_category)
@@ -67,7 +68,10 @@ public interface Api_Para {
             @Field("mobile_no") String mobile_no,
             @Field("gender") String gender,
             @Field("age") String age,
-            @Field("request") String request
+            @Field("request") String request,
+            @Field("payment_status") String payment_status,
+            @Field("pay_amount") String pay_amount,
+            @Field("payment_id") String payment_id
             );
 
 

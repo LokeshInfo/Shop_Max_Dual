@@ -21,7 +21,7 @@ public interface BaseUrl {
     // Doctors
 
     String login = "login/do_login";
-    String registration = "registration";
+    String registration = "registration/add_info";
     String update_profile = "update_profile";
     String sale_category = "sale_category";
     String food_category = "food_category";

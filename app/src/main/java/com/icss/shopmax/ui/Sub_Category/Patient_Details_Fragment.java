@@ -37,7 +37,7 @@ public class Patient_Details_Fragment extends Fragment
     RadioGroup radioGroup;
     private EditText edname, edmail, edphone, edrequest, edage;
     private String name, mail, phone, request, age, gender="";
-    private String user_id, hospital_id, doctor_id;
+    private String user_id, hospital_id, doctor_id, famount;
 
     @Nullable
     @Override
@@ -56,6 +56,7 @@ public class Patient_Details_Fragment extends Fragment
          if (getArguments()!=null){
              hospital_id = getArguments().getString("h_id");
              doctor_id = getArguments().getString("d_id");
+             famount = getArguments().getString("amount");
          }
 
          Click_Listeners();
@@ -137,7 +138,6 @@ public class Patient_Details_Fragment extends Fragment
 
     private void book_appt(){
 
-
         final ProgressDialog dialog;
         dialog = new ProgressDialog(getActivity());
         dialog.setMessage("Submitting request");
@@ -147,7 +147,7 @@ public class Patient_Details_Fragment extends Fragment
         user_id = AppPrefrences.getUserid(getActivity());
         Log.e("Data Booking"," h_id "+hospital_id+" doc_id "+doctor_id+" user_id "+user_id);
 
-        Retrofit_Client.getAPIService().Book_Doctor(user_id, hospital_id,doctor_id,name,mail,phone,gender,age,request).enqueue(new Callback<Doc_Book_Model>() {
+        Retrofit_Client.getAPIService().Book_Doctor(user_id, hospital_id,doctor_id,name,mail,phone,gender,age,request,"1",famount,"pay@xyz").enqueue(new Callback<Doc_Book_Model>() {
             @Override
             public void onResponse(Call<Doc_Book_Model> call, Response<Doc_Book_Model> response) {
 

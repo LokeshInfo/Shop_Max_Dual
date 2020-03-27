@@ -1,5 +1,6 @@
 package com.icss.shopmax.View;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -17,9 +18,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.gson.Gson;
 import com.icss.shopmax.API_Retro.Api_Para;
 import com.icss.shopmax.API_Retro.Retrofit_Client;
+import com.icss.shopmax.A_Model.Login_mmodel;
 import com.icss.shopmax.A_Model.Register_Data;
+import com.icss.shopmax.Apputils.AppPrefrences;
 import com.icss.shopmax.Apputils.Utilview;
 import com.icss.shopmax.R;
+import com.icss.shopmax.ui.MainActivity;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import io.github.inflationx.calligraphy3.CalligraphyConfig;
@@ -33,16 +37,17 @@ import retrofit2.Response;
 public class Register_Activity extends AppCompatActivity
 {
     private Button signup;
-    private EditText ed_name, ed_mail, ed_phone, ed_confirm_password, ed_password;
+    private EditText ed_name, ed_surname , ed_mail, ed_phone, ed_confirm_password, ed_password;
     private TextView tv_signin;
+    private Activity activity = Register_Activity.this;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
         signup = findViewById(R.id.SignUp);
         ed_name = findViewById(R.id.ed_name);
+        ed_surname = findViewById(R.id.ed_surname);
         ed_password = findViewById(R.id.ed_password);
         ed_confirm_password = findViewById(R.id.ed_confirm_password);
         ed_mail = findViewById(R.id.ed_email);
@@ -87,17 +92,20 @@ public class Register_Activity extends AppCompatActivity
     private Boolean validate(){
 
         String usernm = ed_name.getText().toString();
+        String srname = ed_surname.getText().toString();
         String phone = ed_phone.getText().toString();
         String mail = ed_mail.getText().toString();
         String password = ed_password.getText().toString();
         String conf_pass = ed_confirm_password.getText().toString();
 
-        if (usernm.matches("") && password.matches("")){
+        if (usernm.matches("") && password.matches("") && phone.matches("") && mail.matches("")
+                && conf_pass.matches("") && srname.matches("")){
             ed_name.setError("Required field");
             ed_phone.setError("Required field");
             ed_mail.setError("Required field");
             ed_password.setError("Required field");
             ed_confirm_password.setError("Required field");
+            ed_surname.setError("Required field");
             Toast.makeText(this, "Please enter all fields correctly...", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -105,7 +113,10 @@ public class Register_Activity extends AppCompatActivity
             ed_name.setError("Required field");
             return false;
         }
-
+        else if (srname.matches("")){
+            ed_surname.setError("Required field");
+            return false;
+        }
         else if (mail.matches("")){
             ed_mail.setError("Required field");
             return false;
@@ -144,26 +155,37 @@ public class Register_Activity extends AppCompatActivity
         dialog.show();
 
         String usernm = ed_name.getText().toString();
+        String surnm = ed_surname.getText().toString();
         String phone = ed_phone.getText().toString();
         String mail = ed_mail.getText().toString();
         String password = ed_password.getText().toString();
         String t_code = "";
 
-        Retrofit_Client.getAPIService().CALL_REGISTER(usernm,mail,phone,password,t_code).enqueue(new Callback<Register_Data>() {
+        Retrofit_Client.getAPIService().CALL_REGISTER(usernm,surnm,mail,phone,password,password).enqueue(new Callback<Login_mmodel>() {
             @Override
-            public void onResponse(Call<Register_Data> call, Response<Register_Data> response) {
+            public void onResponse(Call<Login_mmodel> call, Response<Login_mmodel> response) {
                 dialog.dismiss();
                 Log.e("CALL_REGISTER RESPONSE.", "" + new Gson().toJson(response.body()));
-                if (response.body().isResponce()){
-                    Login_Dialog();
+
+                if (response.body().getResponse().equals("true")){
+
+                    AppPrefrences.setLogin_status(activity,true);
+                    AppPrefrences.setUserid(activity,response.body().getUser_id());
+                    AppPrefrences.setName(activity,response.body().getUsername());
+                    AppPrefrences.setMail(activity,response.body().getEmail());;
+                    AppPrefrences.setMobile(activity,response.body().getPhone());
+
+                    Intent in = new Intent(activity, MainActivity.class);
+                    startActivity(in);
+                    finish();
                 }
-                else if (!response.body().isResponce()){
-                    Toast.makeText(Register_Activity.this, ""+response.body().getError(), Toast.LENGTH_SHORT).show();
+                else if (!response.body().getResponse().equals("true")){
+                    Toast.makeText(activity, ""+response.body().getError_msg(), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<Register_Data> call, Throwable t) {
+            public void onFailure(Call<Login_mmodel> call, Throwable t) {
                 dialog.dismiss();
                 Log.e("CALL_REGISTER Error "," "+t.getLocalizedMessage());
             }
