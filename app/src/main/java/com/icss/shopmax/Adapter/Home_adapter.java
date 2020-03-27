@@ -13,6 +13,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.icss.shopmax.API_Retro.BaseUrl;
+import com.icss.shopmax.A_Model.Services_data;
 import com.icss.shopmax.Model.data_model;
 import com.icss.shopmax.R;
 import com.icss.shopmax.ui.Services.Cake_Order_Fragment;
@@ -35,13 +38,14 @@ import com.icss.shopmax.ui.Services.Travel_Agent_Fragment;
 import com.icss.shopmax.ui.Services.classfieds_fragment;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Home_adapter extends RecyclerView.Adapter<Home_adapter.ViewHolder>
 {
-    ArrayList<data_model> dataList;
+    List<Services_data> dataList;
     Activity mactivity;
 
-    public Home_adapter(Activity mactivity, ArrayList<data_model> dataList)
+    public Home_adapter(Activity mactivity, List<Services_data> dataList)
     {
         this.mactivity=mactivity;
         this.dataList=dataList;
@@ -69,20 +73,19 @@ public class Home_adapter extends RecyclerView.Adapter<Home_adapter.ViewHolder>
     public void onBindViewHolder(Home_adapter.ViewHolder viewHolder, int i) {
         if (viewHolder!=null)
         {
-           final data_model dob = dataList.get(i);
+           final Services_data dob = dataList.get(i);
 
-           viewHolder.name.setText(dob.getName());
-           viewHolder.img.setImageResource(dob.getImage());
-           
-           
-           viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+           viewHolder.name.setText(dob.getService_name());
+            Glide.with(mactivity).load(BaseUrl.image_services +dob.getBanner()).into(viewHolder.img);
+
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
                    Fragment fragment;
                    FragmentManager fragmentmanager;
                    FragmentTransaction fragmentTransaction;
                    AppCompatActivity activity = (AppCompatActivity) v.getContext();
-                   String nm = dob.getName();
+                   String nm = dob.getService_id();
                    switch (nm)                  
                    {
                        case "Cleaning Services":
@@ -185,7 +188,7 @@ public class Home_adapter extends RecyclerView.Adapter<Home_adapter.ViewHolder>
                            fragmentTransaction.commit();
                            break;
 
-                       case "Doctors \n Appointment":
+                       case "3":
                            fragment = new Hospital_fragment();
                            fragmentmanager =activity.getSupportFragmentManager();
                            fragmentTransaction =fragmentmanager.beginTransaction();

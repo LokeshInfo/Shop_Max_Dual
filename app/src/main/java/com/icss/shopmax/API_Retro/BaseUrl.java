@@ -4,7 +4,7 @@ public interface BaseUrl {
 
 //    String BaseUrl = "https://www.lotusenterprises.net/shopmax/api/";
     String BaseUrl = "https://www.lotusenterprises.net/shopmax_store/api/";
-    String BaseImg = "https://www.lotusenterprises.net/shopmax/";
+    String BaseImg = "https://www.lotusenterprises.net/shopmax_store/";
 
     // Service
     String get_Services = "get_services";
@@ -12,14 +12,18 @@ public interface BaseUrl {
 
     // Hospitals
     String get_hospitals = "get_hospitals";
-    String image_hospitals = "https://www.lotusenterprises.net/shopmax_store/uploads/hospital_image/";
-
-    String get_doctors ="get_doctors/hospital";
-    String book_doctor_appointment ="add_booking/patient_appointment";
-    String image_doctor = "https://www.lotusenterprises.net/shopmax_store/uploads/doctor_image/";
+    String image_hospitals = BaseImg+"uploads/hospital_image/";
 
     // Doctors
+    String get_doctors ="get_doctors/hospital";
+    String book_doctor_appointment ="add_booking/patient_appointment";
+    String image_doctor = BaseImg+"uploads/doctor_image/";
 
+    // All Common Api's
+
+
+    String get_services = "get_services";
+    String image_services = BaseImg+"uploads/service_image/";
     String login = "login/do_login";
     String registration = "registration/add_info";
     String update_profile = "update_profile";
@@ -33,7 +37,5 @@ public interface BaseUrl {
     String food_subcategory = "food_subcategory";
     String doctor_subcategory = "doctor_subcategory";
     String grocery_subcategory = "grocery_subcategory";
-
-    // Doctor
 
 }

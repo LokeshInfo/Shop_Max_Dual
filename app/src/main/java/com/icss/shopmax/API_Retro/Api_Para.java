@@ -9,6 +9,7 @@ import com.icss.shopmax.A_Model.Login_mmodel;
 import com.icss.shopmax.A_Model.Register_Data;
 import com.icss.shopmax.A_Model.Sale_Model;
 import com.icss.shopmax.A_Model.Sale_Sub_Model;
+import com.icss.shopmax.A_Model.Services_Model;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -17,6 +18,9 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface Api_Para {
+
+    @GET(BaseUrl.get_services)
+    Call<Services_Model> Get_Services();
 
     @FormUrlEncoded
     @POST(BaseUrl.login)

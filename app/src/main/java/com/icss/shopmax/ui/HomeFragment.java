@@ -1,6 +1,8 @@
 package com.icss.shopmax.ui;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +15,19 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
+import com.icss.shopmax.API_Retro.Retrofit_Client;
+import com.icss.shopmax.A_Model.Services_Model;
 import com.icss.shopmax.Adapter.Home_adapter;
 import com.icss.shopmax.Model.data_model;
 import com.icss.shopmax.R;
+import com.icss.shopmax.View.Login_Activity;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
 
@@ -40,20 +50,46 @@ public class HomeFragment extends Fragment {
 
         recycler1 = (RecyclerView) root.findViewById(R.id.recycler1);
 
-        prepare_data();
-
-        Call_recycler();
+        Call_Api();
 
         return root;
     }
 
-    private void Call_recycler(){
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 3 , GridLayoutManager.VERTICAL, false);
+    private void Call_Api(){
 
-        adapter = new Home_adapter(getActivity() , list1);
-        recycler1.setLayoutManager(gridLayoutManager);
-        recycler1.setAdapter(adapter);
+        final ProgressDialog dialog;
+        dialog = new ProgressDialog(getActivity());
+        dialog.setMessage(" Loading Services... ");
+        dialog.setCancelable(true);
+        dialog.show();
+
+        Retrofit_Client.getAPIService().Get_Services().enqueue(new Callback<Services_Model>() {
+            @Override
+            public void onResponse(Call<Services_Model> call, Response<Services_Model> response) {
+                dialog.dismiss();
+                Log.e("Get Services RESPONSE.", "" + new Gson().toJson(response.body()));
+
+                if (response.body().getResponse()){
+
+                    GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 3 , GridLayoutManager.VERTICAL, false);
+
+                    adapter = new Home_adapter(getActivity() , response.body().getData());
+                    recycler1.setLayoutManager(gridLayoutManager);
+                    recycler1.setAdapter(adapter);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Services_Model> call, Throwable t) {
+                dialog.dismiss();
+                Log.e("Get_Services Error "," "+t.getMessage());
+                Log.e("Get_Services Error "," "+t.getLocalizedMessage());
+                Log.e("Get_Services Error "," "+t.getCause());
+            }
+        });
+
     }
+
 
     private void prepare_data(){
         list1 = new ArrayList<>();
@@ -76,7 +112,5 @@ public class HomeFragment extends Fragment {
         list1.add(new data_model(R.drawable.gas_cyliner, "Gas Cylinder\n Delivery"));
         list1.add(new data_model(R.drawable.cleaning_services, "Cleaning Services"));
         list1.add(new data_model(R.drawable.other_services, "Other Services"));
-
-
     }
 }
