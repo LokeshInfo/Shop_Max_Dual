@@ -161,8 +161,5 @@ public class Login_Activity extends AppCompatActivity
                 Log.e("CALL_LOGIN Error "," "+t.getCause());
             }
         });
-
-
     }
-
 }

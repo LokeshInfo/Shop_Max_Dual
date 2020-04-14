@@ -88,7 +88,7 @@ public class Home_adapter extends RecyclerView.Adapter<Home_adapter.ViewHolder>
                    String nm = dob.getService_id();
                    switch (nm)                  
                    {
-                       case "Cleaning Services":
+                       case "18":
                            fragment = new Cleaning_Services();
                            fragmentmanager =activity.getSupportFragmentManager();
                            fragmentTransaction =fragmentmanager.beginTransaction();
@@ -98,7 +98,7 @@ public class Home_adapter extends RecyclerView.Adapter<Home_adapter.ViewHolder>
                            break;
 
 
-                       case "Hotel Booking":
+                       case "7":
                            fragment = new Hotel_Fragment();
                            fragmentmanager =activity.getSupportFragmentManager();
                            fragmentTransaction =fragmentmanager.beginTransaction();
@@ -107,7 +107,7 @@ public class Home_adapter extends RecyclerView.Adapter<Home_adapter.ViewHolder>
                            fragmentTransaction.commit();
                            break;
 
-                       case "Grocery Orders\n & delivery":
+                       case "4":
                            fragment = new Grocery_Fragment();
                            fragmentmanager =activity.getSupportFragmentManager();
                            fragmentTransaction =fragmentmanager.beginTransaction();
@@ -116,7 +116,7 @@ public class Home_adapter extends RecyclerView.Adapter<Home_adapter.ViewHolder>
                            fragmentTransaction.commit();
                            break;
 
-                       case "Cake Order &\n Homely Food":
+                       case "14":
                            fragment = new Cake_Order_Fragment();
                            fragmentmanager =activity.getSupportFragmentManager();
                            fragmentTransaction =fragmentmanager.beginTransaction();
@@ -125,7 +125,7 @@ public class Home_adapter extends RecyclerView.Adapter<Home_adapter.ViewHolder>
                            fragmentTransaction.commit();
                            break;
 
-                       case "Food Orders\n & delivery":
+                       case "5":
                            fragment = new Food_Order_Fragment();
                            fragmentmanager =activity.getSupportFragmentManager();
                            fragmentTransaction =fragmentmanager.beginTransaction();
@@ -134,7 +134,7 @@ public class Home_adapter extends RecyclerView.Adapter<Home_adapter.ViewHolder>
                            fragmentTransaction.commit();
                            break;
 
-                       case "SALE":
+                       case "2":
                            fragment = new Sale_Fragment();
                            fragmentmanager =activity.getSupportFragmentManager();
                            fragmentTransaction =fragmentmanager.beginTransaction();
@@ -143,7 +143,7 @@ public class Home_adapter extends RecyclerView.Adapter<Home_adapter.ViewHolder>
                            fragmentTransaction.commit();
                            break;
 
-                       case "Technical Support":
+                       case "11":
                            fragment = new Technical_Support_fragment();
                            fragmentmanager =activity.getSupportFragmentManager();
                            fragmentTransaction =fragmentmanager.beginTransaction();
@@ -152,7 +152,7 @@ public class Home_adapter extends RecyclerView.Adapter<Home_adapter.ViewHolder>
                            fragmentTransaction.commit();
                            break;
 
-                       case "Professional\n CV writers":
+                       case "13":
                            fragment = new Professional_writer_fragment();
                            fragmentmanager =activity.getSupportFragmentManager();
                            fragmentTransaction =fragmentmanager.beginTransaction();
@@ -161,7 +161,7 @@ public class Home_adapter extends RecyclerView.Adapter<Home_adapter.ViewHolder>
                            fragmentTransaction.commit();
                            break;
 
-                       case "Rent A Car":
+                       case "9":
                            fragment = new RentCar_fragment();
                            fragmentmanager =activity.getSupportFragmentManager();
                            fragmentTransaction =fragmentmanager.beginTransaction();
@@ -170,7 +170,7 @@ public class Home_adapter extends RecyclerView.Adapter<Home_adapter.ViewHolder>
                            fragmentTransaction.commit();
                            break;
 
-                       case "Pest \n Control":
+                       case "15":
                            fragment = new Pest_Control_Fragment();
                            fragmentmanager =activity.getSupportFragmentManager();
                            fragmentTransaction =fragmentmanager.beginTransaction();
@@ -179,7 +179,7 @@ public class Home_adapter extends RecyclerView.Adapter<Home_adapter.ViewHolder>
                            fragmentTransaction.commit();
                            break;
 
-                       case "Chef at\n Home":
+                       case "16":
                            fragment = new Chef_fragment();
                            fragmentmanager =activity.getSupportFragmentManager();
                            fragmentTransaction =fragmentmanager.beginTransaction();
@@ -197,7 +197,7 @@ public class Home_adapter extends RecyclerView.Adapter<Home_adapter.ViewHolder>
                            fragmentTransaction.commit();
                            break;
 
-                       case "IT Services":
+                       case "12":
                            fragment = new IT_services_fragment();
                            fragmentmanager =activity.getSupportFragmentManager();
                            fragmentTransaction =fragmentmanager.beginTransaction();
@@ -206,7 +206,7 @@ public class Home_adapter extends RecyclerView.Adapter<Home_adapter.ViewHolder>
                            fragmentTransaction.commit();
                            break;
 
-                       case "Photographer":
+                       case "10":
                            fragment = new Photographer_Fragment();
                            fragmentmanager =activity.getSupportFragmentManager();
                            fragmentTransaction =fragmentmanager.beginTransaction();
@@ -215,7 +215,7 @@ public class Home_adapter extends RecyclerView.Adapter<Home_adapter.ViewHolder>
                            fragmentTransaction.commit();
                            break;
 
-                       case "Gas Cylinder\n Delivery":
+                       case "17":
                            fragment = new Gas_Cylinder_fragment();
                            fragmentmanager =activity.getSupportFragmentManager();
                            fragmentTransaction =fragmentmanager.beginTransaction();
@@ -224,7 +224,7 @@ public class Home_adapter extends RecyclerView.Adapter<Home_adapter.ViewHolder>
                            fragmentTransaction.commit();
                            break;
 
-                       case "Other Services":
+                       case "19":
                            fragment = new Other_Services_Fragment();
                            fragmentmanager =activity.getSupportFragmentManager();
                            fragmentTransaction =fragmentmanager.beginTransaction();
@@ -233,7 +233,7 @@ public class Home_adapter extends RecyclerView.Adapter<Home_adapter.ViewHolder>
                            fragmentTransaction.commit();
                            break;
 
-                       case "Travel Agent":
+                       case "8":
                            fragment = new Travel_Agent_Fragment();
                            fragmentmanager =activity.getSupportFragmentManager();
                            fragmentTransaction =fragmentmanager.beginTransaction();
@@ -242,7 +242,7 @@ public class Home_adapter extends RecyclerView.Adapter<Home_adapter.ViewHolder>
                            fragmentTransaction.commit();
                            break;
 
-                       case "Classfieds":
+                       case "6":
                            fragment=new classfieds_fragment();
                            fragmentmanager =activity.getSupportFragmentManager();
                            fragmentTransaction =fragmentmanager.beginTransaction();

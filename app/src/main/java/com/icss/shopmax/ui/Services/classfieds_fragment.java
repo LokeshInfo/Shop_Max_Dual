@@ -24,6 +24,7 @@ import com.icss.shopmax.Model.classfieds_Data;
 import java.util.ArrayList;
 
 public class classfieds_fragment extends Fragment {
+
     RecyclerView recyclerView;
     ImageView img1,img2;
     @Nullable
@@ -65,9 +66,6 @@ public class classfieds_fragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
-
-
 
         pre_Data();
 
