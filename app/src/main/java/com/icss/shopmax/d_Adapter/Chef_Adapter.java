@@ -1,4 +1,4 @@
-package com.icss.shopmax.ui.Services;
+package com.icss.shopmax.d_Adapter;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -7,14 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.icss.shopmax.d_Adapter.Sub_it_customer_service;
-import com.icss.shopmax.Model.Chef_Model;
-import com.icss.shopmax.R;
-
-import java.util.ArrayList;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
@@ -22,28 +14,44 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class Technical_Adapter extends RecyclerView.Adapter<Technical_Adapter.ViewHolder> {
+import com.bumptech.glide.Glide;
+import com.icss.shopmax.Model.Chef_Model;
+import com.icss.shopmax.R;
 
+import java.util.ArrayList;
+
+public class Chef_Adapter extends RecyclerView.Adapter<Chef_Adapter.ViewHolder>
+{
     ArrayList<Chef_Model> dataList;
     CardView card;
     Activity mactivity;
 
-    public Technical_Adapter(Activity mactivity, ArrayList<Chef_Model> dataList)
+    public Chef_Adapter(Activity mactivity, ArrayList<Chef_Model> dataList)
     {
         this.mactivity=mactivity;
         this.dataList=dataList;
         setHasStableIds(true);
     }
 
-    @NonNull
     @Override
-    public Technical_Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.adapter_chef,viewGroup,false);
-        return new Technical_Adapter.ViewHolder(v);
+    public int getItemViewType(int position) {
+        return position;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Technical_Adapter.ViewHolder viewHolder, final int i) {
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public Chef_Adapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.adapter_chef,viewGroup,false);
+        return new Chef_Adapter.ViewHolder(v);
+    }
+
+    @Override
+    public void onBindViewHolder(final Chef_Adapter.ViewHolder viewHolder,final int i) {
         if (viewHolder!=null)
         {
             final Chef_Model dob = dataList.get(i);
@@ -56,7 +64,7 @@ public class Technical_Adapter extends RecyclerView.Adapter<Technical_Adapter.Vi
                 @Override
                 public void onClick(View v) {
                     AppCompatActivity activ = (AppCompatActivity) v.getContext();
-                    Fragment fragment = new Sub_it_customer_service();
+                    Fragment fragment = new Sub_chef_customer_service();
                     FragmentManager fragmentmanager =activ.getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction =fragmentmanager.beginTransaction();
                     fragmentTransaction.addToBackStack(fragment.getTag());

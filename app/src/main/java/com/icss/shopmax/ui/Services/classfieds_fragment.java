@@ -15,9 +15,9 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.icss.shopmax.Adapter.classfieds_adapter;
-import com.icss.shopmax.Adapter.classfieds_quickbrowse;
-import com.icss.shopmax.Adapter.classfieds_search;
+import com.icss.shopmax.d_Adapter.classfieds_adapter;
+import com.icss.shopmax.d_Adapter.classfieds_quickbrowse;
+import com.icss.shopmax.d_Adapter.classfieds_search;
 import com.icss.shopmax.R;
 import com.icss.shopmax.ui.MainActivity;
 import com.icss.shopmax.Model.classfieds_Data;

@@ -18,13 +18,9 @@ import com.google.gson.Gson;
 import com.icss.shopmax.API_Retro.Api_Para;
 import com.icss.shopmax.API_Retro.Retrofit_Client;
 import com.icss.shopmax.A_Model.Sale_Model;
-import com.icss.shopmax.Adapter.Sale_Adapter;
-import com.icss.shopmax.Model.Sale_Data;
+import com.icss.shopmax.d_Adapter.Sale_Adapter;
 import com.icss.shopmax.R;
-import com.icss.shopmax.View.Register_Activity;
 import com.icss.shopmax.ui.MainActivity;
-
-import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;

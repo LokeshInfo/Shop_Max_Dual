@@ -7,9 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,8 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.icss.shopmax.Adapter.Rent_Car_Adapter;
-import com.icss.shopmax.Apputils.Utilview;
+import com.icss.shopmax.d_Adapter.Rent_Car_Adapter;
 import com.icss.shopmax.Model.Rent_Car_Data;
 import com.icss.shopmax.R;
 import com.icss.shopmax.ui.MainActivity;

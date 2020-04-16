@@ -2,13 +2,10 @@ package com.icss.shopmax.ui.Services;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,15 +14,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.icss.shopmax.Adapter.Chef_Adapter;
 import com.icss.shopmax.Model.Chef_Model;
 import com.icss.shopmax.R;
 import com.icss.shopmax.ui.MainActivity;
 import com.icss.shopmax.ui.Sub_Category.Technical_Sub_Fragment;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.concurrent.TimeUnit;
 
 public class Technical_Support_fragment extends Fragment
 {

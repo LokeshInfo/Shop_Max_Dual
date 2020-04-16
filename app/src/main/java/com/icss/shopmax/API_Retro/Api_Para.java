@@ -2,6 +2,7 @@ package com.icss.shopmax.API_Retro;
 
 import com.icss.shopmax.A_Model.Doc_Book_Model;
 import com.icss.shopmax.A_Model.Doctor_Model;
+import com.icss.shopmax.A_Model.Grocery_Model;
 import com.icss.shopmax.A_Model.Hospital_Model;
 import com.icss.shopmax.A_Model.Login_Data;
 import com.icss.shopmax.A_Model.Login_Model;
@@ -78,6 +79,11 @@ public interface Api_Para {
             @Field("payment_id") String payment_id
             );
 
+
+    // Grocery
+
+    @GET(BaseUrl.get_grocery_cat)
+    Call<Grocery_Model> Get_Grocery_Cat();
 
 
 }

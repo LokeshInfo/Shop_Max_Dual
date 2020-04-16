@@ -1,32 +1,35 @@
-package com.icss.shopmax.Sub_Adapter;
+package com.icss.shopmax.d_Adapter;
 
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.icss.shopmax.A_Model.Sale_Sub_Data;
-import com.icss.shopmax.d_Adapter.SliderAdapter;
 import com.icss.shopmax.Model.Slider_Data;
 import com.icss.shopmax.R;
+import com.icss.shopmax.ui.Sub_Category.Sub_Sale_fragment;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sub_Sale_Adapter  extends RecyclerView.Adapter<Sub_Sale_Adapter.ViewHolder>
+public class Sale_Adapter extends RecyclerView.Adapter<Sale_Adapter.ViewHolder>
 {
-    List<Sale_Sub_Data> dlist;
+    List<com.icss.shopmax.A_Model.Sale_Data> dlist;
     Activity activity;
     List<Slider_Data> image_list;
     SliderAdapter slide_adapter;
 
-    public Sub_Sale_Adapter(Activity activity, List<Sale_Sub_Data> listd){
+    public Sale_Adapter(Activity activity, List<com.icss.shopmax.A_Model.Sale_Data> listd){
         this.activity = activity;
         this.dlist = listd;
         setHasStableIds(true);
@@ -44,25 +47,35 @@ public class Sub_Sale_Adapter  extends RecyclerView.Adapter<Sub_Sale_Adapter.Vie
 
     @NonNull
     @Override
-    public Sub_Sale_Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_sub_sale,parent,false);
-        return new Sub_Sale_Adapter.ViewHolder(v);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_sale,parent,false);
+        return new Sale_Adapter.ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final Sub_Sale_Adapter.ViewHolder holder, int i) {
+    public void onBindViewHolder(@NonNull ViewHolder holder,final int i) {
 
         if (holder!=null){
 
             holder.name.setText(dlist.get(i).getName());
-            holder.price.setText(dlist.get(i).getPrice()+" /-");
+            holder.price.setText(dlist.get(i).getPrice_from()+" /-   To      "+dlist.get(i).getPrice_to()+" /-" );
             holder.description.setText(dlist.get(i).getDescription());
 
-            holder.addcart.setOnClickListener(new View.OnClickListener() {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    holder.addcart.setText("Added");
+                        AppCompatActivity activ = (AppCompatActivity) v.getContext();
+                        Fragment fragment = new Sub_Sale_fragment();
+                        Bundle args = new Bundle();
+                        args.putString("cat_id",dlist.get(i).getId());
+                        args.putString("cat_name",dlist.get(i).getName());
+                        fragment.setArguments(args);
+                        FragmentManager fragmentmanager =activ.getSupportFragmentManager();
+                        FragmentTransaction fragmentTransaction =fragmentmanager.beginTransaction();
+                        fragmentTransaction.addToBackStack(fragment.getTag());
+                        fragmentTransaction.replace(R.id.fragment_layout,fragment);
+                        fragmentTransaction.commit();
                 }
             });
 
@@ -96,7 +109,6 @@ public class Sub_Sale_Adapter  extends RecyclerView.Adapter<Sub_Sale_Adapter.Vie
     {
         TextView name, price, description;
         SliderView sliderView;
-        Button addcart;
 
         public ViewHolder(View itemview){
             super(itemview);
@@ -104,7 +116,6 @@ public class Sub_Sale_Adapter  extends RecyclerView.Adapter<Sub_Sale_Adapter.Vie
             price = itemview.findViewById(R.id.tx_saleamt);
             description = itemview.findViewById(R.id.tx_saledesc);
             sliderView = itemview.findViewById(R.id.jimageSlider);
-            addcart = itemview.findViewById(R.id.adtocart);
         }
     }
 

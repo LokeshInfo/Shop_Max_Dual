@@ -17,10 +17,8 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.icss.shopmax.Adapter.Rent_Car_Adapter;
 import com.icss.shopmax.Model.Rent_Car_Data;
 import com.icss.shopmax.R;
-import com.icss.shopmax.ui.Services.Fragment_Bill;
 import com.icss.shopmax.ui.Sub_Category.Sub_Professional_Writer;
 
 import java.util.ArrayList;

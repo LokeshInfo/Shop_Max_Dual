@@ -1,12 +1,15 @@
 package com.icss.shopmax.ui.Services;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,22 +17,33 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
+import com.icss.shopmax.API_Retro.Api_Para;
+import com.icss.shopmax.API_Retro.Retrofit_Client;
+import com.icss.shopmax.A_Model.Grocery_Model;
+import com.icss.shopmax.Adapter.Grocery_Adapter;
 import com.icss.shopmax.R;
+import com.icss.shopmax.View.Login_Activity;
 import com.icss.shopmax.ui.MainActivity;
 import com.icss.shopmax.ui.Sub_Category.Cart_Fragment;
 import com.icss.shopmax.ui.Sub_Category.Sub_Add_Grocery_Fragment;
 import com.icss.shopmax.ui.Sub_Category.Sub_Grocery_Fragment;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class Grocery_Fragment extends Fragment
 {
-    LinearLayout food, non_food, add_food;
-    ImageView img1, img2, img3, img4,img5,img6;
+    LinearLayout add_food;
     Toolbar toolbar;
     RecyclerView recyclerView;
     Button ckeckOutBT;
+    private Api_Para ApiService;
 
     @Nullable
     @Override
@@ -38,21 +52,15 @@ public class Grocery_Fragment extends Fragment
         View view = inflater.inflate(R.layout.fragment_grocery_orders,container,false);
 
         toolbar = view.findViewById(R.id.grocery_toolbar);
-        recyclerView = view.findViewById(R.id.recycler_grocery);
+        recyclerView = view.findViewById(R.id.grocery_recyclerv);
         ckeckOutBT= view.findViewById(R.id.buttn_viewcart);
 
-        food = view.findViewById(R.id.foodlyt);
-        non_food = view.findViewById(R.id.non_foodlyt);
         add_food = view.findViewById(R.id.additional_lyt);
-        img1 = view.findViewById(R.id.gi1);
-        img2 = view.findViewById(R.id.gi2);
-        img3 = view.findViewById(R.id.gi3);
-        img4 = view.findViewById(R.id.gi11);
-        img5 = view.findViewById(R.id.gi22);
-        img6 = view.findViewById(R.id.gi33);
+
+        ApiService = Retrofit_Client.getAPIService();
 
         Click_Listeners();
-        img_load();
+        Get_category();
         ckeckOutBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,20 +85,6 @@ public class Grocery_Fragment extends Fragment
             }
         });
 
-        food.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Call_Fragment("A", new Sub_Grocery_Fragment());
-            }
-        });
-
-        non_food.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Call_Fragment("v", new Sub_Grocery_Fragment());
-            }
-        });
-
         add_food.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,22 +93,43 @@ public class Grocery_Fragment extends Fragment
         });
     }
 
-    private void img_load()
-    {
-        String g1 = "https://hellenicgrocery.co.uk/wp-content/uploads/2019/04/85.jpg" ;     // rice
-        String g2 = "https://5.imimg.com/data5/IQ/ST/MY-55300537/wheat-flour-500x500.jpg" ; // wheat
-        String g3 = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/shopping-bag-full-of-fresh-vegetables-and-fruits-royalty-free-image-1128687123-1564523576.jpg?crop=0.669xw:1.00xh;0.300xw,0&resize=640:*" ;  // vegetables
-        String g4 = "https://thumbs.dreamstime.com/t/composition-colgate-products-poznan-poland-may-brand-oral-hygiene-such-as-toothpastes-toothbrushes-mouthwashes-92146435.jpg" ;  // colgate // dish wash // pen
-        String g5 = "https://img3.exportersindia.com/product_images/bc-full/dir_169/5055867/dish-wash-liquid-1529043953-3965227.jpg" ;
-        String g6 = "https://images.unsplash.com/photo-1523292643061-ed55f8c45178?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" ;
 
+    private void Get_category(){
 
-        Glide.with(getActivity()).load(g1).into(img1);
-        Glide.with(getActivity()).load(g3).into(img2);
-        Glide.with(getActivity()).load(g2).into(img3);
-        Glide.with(getActivity()).load(g4).into(img4);
-        Glide.with(getActivity()).load(g5).into(img5);
-        Glide.with(getActivity()).load(g6).into(img6);
+        final ProgressDialog dialog;
+        dialog = new ProgressDialog(getActivity());
+        dialog.setMessage("Loading...");
+        dialog.setCancelable(true);
+        dialog.show();
+
+        ApiService.Get_Grocery_Cat().enqueue(new Callback<Grocery_Model>() {
+            @Override
+            public void onResponse(Call<Grocery_Model> call, Response<Grocery_Model> response) {
+                dialog.dismiss();
+
+                Log.e("Get_Grocery_Cat .", "Response " + new Gson().toJson(response.body()));
+
+                if (response.body().getResponse()){
+                Grocery_Adapter gadapter = new Grocery_Adapter(getActivity(),response.body().getData());
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+                recyclerView.setLayoutManager(linearLayoutManager);
+                recyclerView.setAdapter(gadapter);}
+                else{
+                    Toast.makeText(getActivity(), "No data found...", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<Grocery_Model> call, Throwable t) {
+                dialog.dismiss();
+
+                Log.e("Get_Grocery_Cat Error "," "+t.getMessage());
+                Log.e("Get_Grocery_Cat Error "," "+t.getLocalizedMessage());
+                Log.e("Get_Grocery_Cat Error "," "+t.getCause());
+            }
+        });
+
     }
 
     private void Call_Fragment(String typ, Fragment fragment){

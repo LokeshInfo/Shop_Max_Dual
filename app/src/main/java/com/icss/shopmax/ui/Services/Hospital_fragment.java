@@ -1,7 +1,6 @@
 package com.icss.shopmax.ui.Services;
 
 import android.app.Activity;
-import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -11,39 +10,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.ImageView;
-import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.icss.shopmax.API_Retro.Api_Para;
 import com.icss.shopmax.API_Retro.Retrofit_Client;
 import com.icss.shopmax.A_Model.Hospital_Model;
-import com.icss.shopmax.Adapter.Hospital_Adapter;
-import com.icss.shopmax.Adapter.Sale_Adapter;
-import com.icss.shopmax.Adapter.classfieds_search;
-import com.icss.shopmax.Apputils.Utilview;
-import com.icss.shopmax.Model.Hospital_Data;
-import com.icss.shopmax.Model.Sale_Data;
+import com.icss.shopmax.d_Adapter.Hospital_Adapter;
 import com.icss.shopmax.R;
-import com.icss.shopmax.View.Login_Activity;
 import com.icss.shopmax.ui.MainActivity;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.concurrent.TimeUnit;
 
 import retrofit2.Call;
 import retrofit2.Callback;

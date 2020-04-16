@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.icss.shopmax.Adapter.Rent_Car_Adapter;
 import com.icss.shopmax.Model.Rent_Car_Data;
 import com.icss.shopmax.R;
 import com.icss.shopmax.Sub_Adapter.Cake_List_Adapter;

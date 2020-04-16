@@ -18,7 +18,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.gson.Gson;
 import com.icss.shopmax.API_Retro.Retrofit_Client;
 import com.icss.shopmax.A_Model.Sale_Sub_Model;
-import com.icss.shopmax.Adapter.Sale_Adapter;
 import com.icss.shopmax.Model.Sale_Data;
 import com.icss.shopmax.R;
 import com.icss.shopmax.Sub_Adapter.Sub_Sale_Adapter;

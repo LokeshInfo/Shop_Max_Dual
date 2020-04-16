@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.icss.shopmax.Adapter.Rent_Hotel_Adapter;
+import com.icss.shopmax.d_Adapter.Rent_Hotel_Adapter;
 import com.icss.shopmax.Model.Rent_Hotel_Data;
 import com.icss.shopmax.R;
 import com.icss.shopmax.ui.MainActivity;

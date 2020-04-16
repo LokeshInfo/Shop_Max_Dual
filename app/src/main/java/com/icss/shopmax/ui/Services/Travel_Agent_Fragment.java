@@ -6,13 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
-import com.icss.shopmax.Adapter.SliderAdapter;
+import com.icss.shopmax.d_Adapter.SliderAdapter;
 import com.icss.shopmax.Model.Slider_Data;
 import com.icss.shopmax.R;
 import com.icss.shopmax.ui.MainActivity;
-import com.icss.shopmax.ui.Sub_Category.Sub_It_Service;
 import com.smarteist.autoimageslider.IndicatorAnimations;
 import com.smarteist.autoimageslider.IndicatorView.draw.controller.DrawController;
 import com.smarteist.autoimageslider.SliderAnimations;
@@ -23,13 +21,11 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.RecyclerView;
 
 public class Travel_Agent_Fragment extends Fragment {
     Toolbar toolbar;

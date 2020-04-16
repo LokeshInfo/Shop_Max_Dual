@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.icss.shopmax.Adapter.Food_Order_Adapter;
 import com.icss.shopmax.Model.Food_Menu_Model;
 import com.icss.shopmax.R;
 import com.icss.shopmax.Sub_Adapter.Sub_Food_Menu_Adapter;

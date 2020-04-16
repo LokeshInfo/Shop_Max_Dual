@@ -15,11 +15,10 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.icss.shopmax.Adapter.Chef_Adapter;
+import com.icss.shopmax.d_Adapter.Chef_Adapter;
 import com.icss.shopmax.Model.Chef_Model;
 import com.icss.shopmax.R;
 import com.icss.shopmax.ui.MainActivity;
-import com.icss.shopmax.ui.Sub_Category.Sub_Professional_Writer;
 
 import java.util.ArrayList;
 

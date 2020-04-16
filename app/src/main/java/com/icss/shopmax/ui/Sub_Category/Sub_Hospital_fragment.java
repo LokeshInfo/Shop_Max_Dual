@@ -19,11 +19,9 @@ import com.google.gson.Gson;
 import com.icss.shopmax.API_Retro.Api_Para;
 import com.icss.shopmax.API_Retro.Retrofit_Client;
 import com.icss.shopmax.A_Model.Doctor_Model;
-import com.icss.shopmax.Adapter.Hospital_Adapter;
 import com.icss.shopmax.Model.Hospital_Data;
 import com.icss.shopmax.R;
 import com.icss.shopmax.Sub_Adapter.Sub_Hospital_Adapter;
-import com.icss.shopmax.View.Login_Activity;
 import com.icss.shopmax.ui.MainActivity;
 
 import java.util.ArrayList;

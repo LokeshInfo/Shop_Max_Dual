@@ -6,8 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
@@ -18,10 +16,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.gson.Gson;
 import com.icss.shopmax.API_Retro.Retrofit_Client;
 import com.icss.shopmax.A_Model.Services_Model;
-import com.icss.shopmax.Adapter.Home_adapter;
+import com.icss.shopmax.d_Adapter.Home_adapter;
 import com.icss.shopmax.Model.data_model;
 import com.icss.shopmax.R;
-import com.icss.shopmax.View.Login_Activity;
 
 import java.util.ArrayList;
 
