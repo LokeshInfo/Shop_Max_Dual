@@ -19,6 +19,11 @@ public interface BaseUrl {
     String book_doctor_appointment ="add_booking/patient_appointment";
     String image_doctor = BaseImg+"uploads/doctor_image/";
 
+    // Grocery Items
+    String get_grocery_cat = "get_grocery_cat";
+    String get_grocery_item = "get_grocery_item";
+    String image_grocery = BaseImg+"uploads/grocery_cat_image/";
+
     // All Common Api's
 
 
