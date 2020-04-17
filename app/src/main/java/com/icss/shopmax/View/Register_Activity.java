@@ -16,14 +16,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
-import com.icss.shopmax.API_Retro.Api_Para;
 import com.icss.shopmax.API_Retro.Retrofit_Client;
 import com.icss.shopmax.A_Model.Login_mmodel;
-import com.icss.shopmax.A_Model.Register_Data;
 import com.icss.shopmax.Apputils.AppPrefrences;
 import com.icss.shopmax.Apputils.Utilview;
 import com.icss.shopmax.R;
-import com.icss.shopmax.ui.MainActivity;
+import com.icss.shopmax.All_Services_Class.MainActivity;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import io.github.inflationx.calligraphy3.CalligraphyConfig;

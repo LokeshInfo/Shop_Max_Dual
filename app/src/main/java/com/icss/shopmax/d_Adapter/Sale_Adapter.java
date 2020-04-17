@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.icss.shopmax.Model.Slider_Data;
 import com.icss.shopmax.R;
-import com.icss.shopmax.ui.Sub_Category.Sub_Sale_fragment;
+import com.icss.shopmax.All_Services_Class.Sub_Category.Sub_Sale_fragment;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;

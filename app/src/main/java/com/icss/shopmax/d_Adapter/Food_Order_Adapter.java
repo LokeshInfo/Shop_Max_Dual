@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.icss.shopmax.R;
-import com.icss.shopmax.ui.Sub_Category.Tab_Food_Order_Fragment;
+import com.icss.shopmax.All_Services_Class.Sub_Category.Tab_Food_Order_Fragment;
 
 import java.util.ArrayList;
 

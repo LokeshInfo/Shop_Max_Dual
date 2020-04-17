@@ -23,9 +23,9 @@ public interface BaseUrl {
     String get_grocery_cat = "get_grocery_cat";
     String get_grocery_item = "get_grocery_item";
     String image_grocery = BaseImg+"uploads/grocery_cat_image/";
+    String image_grocery_products = BaseImg+"uploads/grocery_item_image/";
 
     // All Common Api's
-
 
     String get_services = "get_services";
     String image_services = BaseImg+"uploads/service_image/";

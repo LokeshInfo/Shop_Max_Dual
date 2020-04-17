@@ -14,7 +14,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.icss.shopmax.R;
-import com.icss.shopmax.ui.MainActivity;
+import com.icss.shopmax.All_Services_Class.MainActivity;
 
 public class fragment_description extends Fragment {
     ImageView img1,img2;

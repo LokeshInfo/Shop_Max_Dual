@@ -19,7 +19,7 @@ import com.bumptech.glide.Glide;
 import com.icss.shopmax.API_Retro.BaseUrl;
 import com.icss.shopmax.A_Model.Hospital_data;
 import com.icss.shopmax.R;
-import com.icss.shopmax.ui.Sub_Category.Sub_Hospital_fragment;
+import com.icss.shopmax.All_Services_Class.Sub_Category.Sub_Hospital_fragment;
 
 import java.util.List;
 

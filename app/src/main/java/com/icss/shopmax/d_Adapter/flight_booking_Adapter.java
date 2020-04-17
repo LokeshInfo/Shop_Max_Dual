@@ -18,8 +18,8 @@ import android.widget.Toast;
 
 import com.icss.shopmax.Model.flight_data;
 import com.icss.shopmax.R;
-import com.icss.shopmax.ui.Sub_Category.Sub_It_Service;
-import com.icss.shopmax.ui.Sub_Category.Sub_Rent_Car;
+import com.icss.shopmax.All_Services_Class.Sub_Category.Sub_It_Service;
+import com.icss.shopmax.All_Services_Class.Sub_Category.Sub_Rent_Car;
 
 import java.util.ArrayList;
 import java.util.Calendar;

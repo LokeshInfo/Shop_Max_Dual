@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.icss.shopmax.Model.classfieds_Data;
 import com.icss.shopmax.R;
-import com.icss.shopmax.ui.MainActivity;
+import com.icss.shopmax.All_Services_Class.MainActivity;
 
 import java.util.ArrayList;
 

@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.icss.shopmax.R;
-import com.icss.shopmax.ui.MainActivity;
+import com.icss.shopmax.All_Services_Class.MainActivity;
 
 public class classfieds_search extends Fragment {
     Toolbar toolbar;

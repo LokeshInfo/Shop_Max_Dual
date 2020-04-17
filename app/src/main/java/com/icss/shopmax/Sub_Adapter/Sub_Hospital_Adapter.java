@@ -18,12 +18,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.icss.shopmax.API_Retro.BaseUrl;
 import com.icss.shopmax.A_Model.Doctor_data;
-import com.icss.shopmax.Model.Hospital_Data;
 import com.icss.shopmax.R;
-import com.icss.shopmax.ui.Sub_Category.Patient_Details_Fragment;
-import com.icss.shopmax.ui.Sub_Category.Sub_Sale_fragment;
+import com.icss.shopmax.All_Services_Class.Sub_Category.Patient_Details_Fragment;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Sub_Hospital_Adapter extends RecyclerView.Adapter<Sub_Hospital_Adapter.ViewHolder>

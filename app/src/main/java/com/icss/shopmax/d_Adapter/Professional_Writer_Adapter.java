@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.icss.shopmax.Model.Professional_Writer_Data;
 import com.icss.shopmax.Model.Slider_Data;
 import com.icss.shopmax.R;
-import com.icss.shopmax.ui.Services.Fragment_Bill;
+import com.icss.shopmax.All_Services_Class.Services.Fragment_Bill;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;

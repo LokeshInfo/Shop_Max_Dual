@@ -43,7 +43,7 @@
             android:windowSoftInputMode="adjustPan|stateHidden"/>
 
 
-        <activity android:name=".ui.MainActivity"
+        <activity android:name=".All_Services_Class.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan|stateHidden"/>

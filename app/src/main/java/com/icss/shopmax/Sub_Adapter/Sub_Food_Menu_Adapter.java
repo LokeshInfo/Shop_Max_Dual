@@ -9,17 +9,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.icss.shopmax.Model.Food_Menu_Model;
-import com.icss.shopmax.Model.Hospital_Data;
 import com.icss.shopmax.R;
-import com.icss.shopmax.ui.Sub_Category.Patient_Details_Fragment;
 
 import java.util.ArrayList;
 

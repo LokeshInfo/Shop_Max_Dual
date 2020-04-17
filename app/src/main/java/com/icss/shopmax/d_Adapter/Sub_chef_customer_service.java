@@ -11,8 +11,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 
 import com.icss.shopmax.R;
-import com.icss.shopmax.ui.MainActivity;
-import com.icss.shopmax.ui.Payment_Fragment;
+import com.icss.shopmax.All_Services_Class.MainActivity;
+import com.icss.shopmax.All_Services_Class.Payment_Fragment;
 
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;

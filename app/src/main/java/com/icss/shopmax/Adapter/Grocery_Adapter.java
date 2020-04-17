@@ -16,12 +16,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.icss.shopmax.API_Retro.BaseUrl;
 import com.icss.shopmax.A_Model.Grocery_Data;
-import com.icss.shopmax.A_Model.Sale_Data;
+import com.icss.shopmax.All_Services_Class.Sub_Category.Sub_Grocery_Fragment;
 import com.icss.shopmax.Model.Slider_Data;
 import com.icss.shopmax.R;
-import com.icss.shopmax.d_Adapter.Sale_Adapter;
-import com.icss.shopmax.d_Adapter.SliderAdapter;
-import com.icss.shopmax.ui.Sub_Category.Sub_Sale_fragment;
+import com.icss.shopmax.All_Services_Class.Sub_Category.Sub_Sale_fragment;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
@@ -69,7 +67,7 @@ public class Grocery_Adapter extends RecyclerView.Adapter<Grocery_Adapter.ViewHo
                 @Override
                 public void onClick(View v) {
                     AppCompatActivity activ = (AppCompatActivity) v.getContext();
-                    Fragment fragment = new Sub_Sale_fragment();
+                    Fragment fragment = new Sub_Grocery_Fragment();
                     Bundle args = new Bundle();
                     args.putString("cat_id",dlist.get(i).getGrocery_cat_id());
                     args.putString("cat_name",dlist.get(i).getGrocery_cat_name());

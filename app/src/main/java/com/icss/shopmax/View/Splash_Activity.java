@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.icss.shopmax.Apputils.AppPrefrences;
 import com.icss.shopmax.R;
-import com.icss.shopmax.ui.MainActivity;
+import com.icss.shopmax.All_Services_Class.MainActivity;
 
 import io.github.inflationx.calligraphy3.CalligraphyConfig;
 import io.github.inflationx.calligraphy3.CalligraphyInterceptor;
