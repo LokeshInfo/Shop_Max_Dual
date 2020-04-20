@@ -15,21 +15,20 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.icss.shopmax.Model.Chef_Model;
+import com.icss.shopmax.API_Retro.BaseUrl;
+import com.icss.shopmax.A_Model.Chef;
 import com.icss.shopmax.R;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class Chef_Adapter extends RecyclerView.Adapter<Chef_Adapter.ViewHolder>
-{
-    ArrayList<Chef_Model> dataList;
+public class Chef_Adapter extends RecyclerView.Adapter<Chef_Adapter.ViewHolder> {
+    private List<Chef> dataList;
     CardView card;
-    Activity mactivity;
+    private Activity mactivity;
 
-    public Chef_Adapter(Activity mactivity, ArrayList<Chef_Model> dataList)
-    {
-        this.mactivity=mactivity;
-        this.dataList=dataList;
+    public Chef_Adapter(Activity mactivity, List<Chef> dataList) {
+        this.mactivity = mactivity;
+        this.dataList = dataList;
         setHasStableIds(true);
     }
 
@@ -46,34 +45,31 @@ public class Chef_Adapter extends RecyclerView.Adapter<Chef_Adapter.ViewHolder>
     @Override
     public Chef_Adapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
 
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.adapter_chef,viewGroup,false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.adapter_chef, viewGroup, false);
         return new Chef_Adapter.ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(final Chef_Adapter.ViewHolder viewHolder,final int i) {
-        if (viewHolder!=null)
-        {
-            final Chef_Model dob = dataList.get(i);
+    public void onBindViewHolder(final Chef_Adapter.ViewHolder viewHolder, final int i) {
+        if (viewHolder != null) {
+            final Chef dob = dataList.get(i);
 
 
-            viewHolder.name.setText(dob.getName());
-            Glide.with(mactivity).load(dob.getImage()).into(viewHolder.img);
+            viewHolder.name.setText(dob.getSubServiceName());
+            Glide.with(mactivity).load(BaseUrl.chefBanner + dob.getBanner()).into(viewHolder.img);
 
             viewHolder.card.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     AppCompatActivity activ = (AppCompatActivity) v.getContext();
                     Fragment fragment = new Sub_chef_customer_service();
-                    FragmentManager fragmentmanager =activ.getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction =fragmentmanager.beginTransaction();
+                    FragmentManager fragmentmanager = activ.getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentmanager.beginTransaction();
                     fragmentTransaction.addToBackStack(fragment.getTag());
-                    fragmentTransaction.replace(R.id.fragment_layout,fragment);
+                    fragmentTransaction.replace(R.id.fragment_layout, fragment);
                     fragmentTransaction.commit();
                 }
             });
-
-
 
 
         }
@@ -84,18 +80,16 @@ public class Chef_Adapter extends RecyclerView.Adapter<Chef_Adapter.ViewHolder>
         return dataList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder
-    {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         TextView name;
         ImageView img;
         CardView card;
 
-        public ViewHolder(View itemview)
-        {
+        public ViewHolder(View itemview) {
             super(itemview);
             name = (TextView) itemview.findViewById(R.id.txservice);
             img = (ImageView) itemview.findViewById(R.id.imagevu);
-            card=(CardView)itemview.findViewById(R.id.item);
+            card = (CardView) itemview.findViewById(R.id.item);
 
         }
     }

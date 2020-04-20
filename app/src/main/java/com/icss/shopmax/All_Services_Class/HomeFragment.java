@@ -87,7 +87,7 @@ public class HomeFragment extends Fragment {
 
     }
 
-
+/*
     private void prepare_data(){
         list1 = new ArrayList<>();
 
@@ -109,5 +109,5 @@ public class HomeFragment extends Fragment {
         list1.add(new data_model(R.drawable.gas_cyliner, "Gas Cylinder\n Delivery"));
         list1.add(new data_model(R.drawable.cleaning_services, "Cleaning Services"));
         list1.add(new data_model(R.drawable.other_services, "Other Services"));
-    }
+    }*/
 }

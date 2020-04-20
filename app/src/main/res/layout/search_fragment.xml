@@ -13,6 +13,8 @@
         android:background="@drawable/bck_app"
         app:navigationIcon="@drawable/ic_arrow_back_white"
         app:popupTheme="@style/AppTheme.PopupOverlay"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
         app:titleTextColor="@color/white">
 
         <RelativeLayout
@@ -25,9 +27,10 @@
                 android:id="@+id/et1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/toolbar"
                 android:layout_marginStart="4dp"
                 android:layout_marginLeft="5dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
                 android:layout_marginTop="6dp"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/edit_text_box"

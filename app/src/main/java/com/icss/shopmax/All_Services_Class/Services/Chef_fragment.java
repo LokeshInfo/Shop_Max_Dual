@@ -15,29 +15,37 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.icss.shopmax.d_Adapter.Chef_Adapter;
-import com.icss.shopmax.Model.Chef_Model;
-import com.icss.shopmax.R;
+import com.icss.shopmax.API_Retro.Api_Para;
+import com.icss.shopmax.API_Retro.Retrofit_Client;
+import com.icss.shopmax.A_Model.Chef;
+import com.icss.shopmax.A_Model.ChefResponse;
 import com.icss.shopmax.All_Services_Class.MainActivity;
+import com.icss.shopmax.R;
+import com.icss.shopmax.d_Adapter.Chef_Adapter;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class Chef_fragment extends Fragment
-{
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class Chef_fragment extends Fragment {
     RecyclerView recyclerView;
     Button book;
-    ArrayList<Chef_Model> cflist;
+    List<Chef> cflist;
+    private Api_Para api_para;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_chef,container,false);
+        View view = inflater.inflate(R.layout.fragment_chef, container, false);
+        api_para = Retrofit_Client.getAPIService();
         Toolbar toolbar = view.findViewById(R.id.toolbar);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity)getActivity()).onBackPressed();
+                ((MainActivity) getActivity()).onBackPressed();
             }
         });
 
@@ -48,10 +56,10 @@ public class Chef_fragment extends Fragment
             @Override
             public void onClick(View v) {
                 Fragment fragment = new Fragment_Bill();
-                FragmentManager fragmentmanager =getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction =fragmentmanager.beginTransaction();
+                FragmentManager fragmentmanager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentmanager.beginTransaction();
                 fragmentTransaction.addToBackStack(fragment.getTag());
-                fragmentTransaction.replace(R.id.fragment_layout,fragment);
+                fragmentTransaction.replace(R.id.fragment_layout, fragment);
                 fragmentTransaction.commit();
             }
         });
@@ -60,18 +68,26 @@ public class Chef_fragment extends Fragment
         return view;
     }
 
-    void pre_data(){
+    void pre_data() {
+        api_para.getAllChefHome().enqueue(new Callback<ChefResponse>() {
+            @Override
+            public void onResponse(Call<ChefResponse> call, Response<ChefResponse> response) {
+                if (response.isSuccessful()) {
+                    ChefResponse chefResponse = response.body();
+                    if (chefResponse.getResponse()) {
+                        GridLayoutManager gd = new GridLayoutManager(getActivity(), 2);
+                        recyclerView.setLayoutManager(gd);
+                        recyclerView.setAdapter(new Chef_Adapter(getActivity(), chefResponse.getChefList()));
+                    }
+                }
+            }
 
-        cflist = new ArrayList<>();
-        cflist.add(new Chef_Model("Indian","https://data.tibettravel.org/assets/images/Tibet-bhutan-tour/indian-food-in-Lhasa.jpg",0));
-        cflist.add(new Chef_Model("Continental","https://3.imimg.com/data3/OM/BI/MY-14951738/110867212-500x500.jpg",0));
-        cflist.add(new Chef_Model("Arabic","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyBfObVjtNGHUgJFf2Eaena7u2wuUpWBCm9OLpFbWgSq5Ys9T7&s",0));
-        cflist.add(new Chef_Model("Chinise","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiDyemqACYI55l5ppfEdQSg7B54azUMVS-BK1wTyKXDN5KiSpD9g&s",0));
-        cflist.add(new Chef_Model("Philipino","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTedKSdh62ZqDldym6jEOSi8KQpKtWEowyysqGIa1s-8x_1s6Kh&s",0));
+            @Override
+            public void onFailure(Call<ChefResponse> call, Throwable t) {
 
-        GridLayoutManager gd = new GridLayoutManager(getActivity(), 2);
-        recyclerView.setLayoutManager(gd);
-        recyclerView.setAdapter(new Chef_Adapter(getActivity(),cflist));
+            }
+        });
+
 
     }
 }

@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/its_toolbar"
         android:layout_width="match_parent"
-        android:background="@drawable/bck_app"
         android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/bck_app"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        app:navigationIcon="@drawable/ic_arrow_back_white"
         app:popupTheme="@style/AppTheme.PopupOverlay"
         app:title="Customer Details"
-        app:titleTextColor="@color/white"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintVertical_bias="0.0"
-        app:navigationIcon="@drawable/ic_arrow_back_white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:titleTextColor="@color/white" />
 
 
     <ScrollView
@@ -27,12 +23,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:layout_marginTop="?actionBarSize"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/patient_toolbar">
-
-
+        android:layout_below="@+id/its_toolbar"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,7 +41,7 @@
                 android:textSize="8pt" />
 
             <EditText
-                android:id="@+id/pt_name"
+                android:id="@+id/etit_Fisrtname"
                 style="@style/ed_txt"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
@@ -71,7 +63,7 @@
                 android:textColorHint="@color/light_grey" />
 
             <EditText
-                android:id="@+id/pt_name1"
+                android:id="@+id/etit_mdlName"
                 style="@style/ed_txt"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
@@ -91,8 +83,9 @@
                 android:paddingRight="15dp"
                 android:singleLine="true"
                 android:textColorHint="@color/light_grey" />
+
             <EditText
-                android:id="@+id/pt_name2"
+                android:id="@+id/etit_last_name"
                 style="@style/ed_txt"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
@@ -123,7 +116,7 @@
                 android:textSize="8pt" />
 
             <EditText
-                android:id="@+id/pt_phone"
+                android:id="@+id/etit_phone"
                 style="@style/ed_txt"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
@@ -148,14 +141,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Email"
-                android:textColor="@color/black"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
+                android:text="Email"
+                android:textColor="@color/black"
                 android:textSize="8pt" />
 
             <EditText
-                android:id="@+id/pt_age"
+                android:id="@+id/etit_email"
                 style="@style/ed_txt"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
@@ -173,16 +166,18 @@
                 android:paddingRight="15dp"
                 android:singleLine="true"
                 android:textColorHint="@color/light_grey" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Address"
-                android:textColor="@color/black"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
+                android:text="Address"
+                android:textColor="@color/black"
                 android:textSize="8pt" />
+
             <EditText
-                android:id="@+id/pt_request"
+                android:id="@+id/etit_address"
                 style="@style/ed_txt"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
@@ -202,7 +197,6 @@
                 android:textColorHint="@color/light_grey" />
 
 
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -213,26 +207,25 @@
                 android:textSize="8pt" />
 
             <EditText
-                android:id="@+id/ed_district"
+                android:id="@+id/etit_district"
+                style="@style/ed_txt"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:layout_marginTop="10dp"
-                android:hint="Enter District Name"
-                android:textColorHint="@color/light_grey"
+                android:autoLink="none"
+                android:autoText="false"
                 android:background="@drawable/edit_text"
+                android:drawablePadding="10dp"
+                android:focusableInTouchMode="true"
+                android:hint="Enter District Name"
+                android:inputType="text"
+                android:padding="2dp"
+                android:paddingStart="24dp"
+                android:paddingLeft="24dp"
                 android:paddingEnd="15dp"
                 android:paddingRight="15dp"
                 android:singleLine="true"
-                android:padding="2dp"
-                android:focusableInTouchMode="true"
-                android:paddingStart="24dp"
-                android:paddingLeft="24dp"
-                android:drawablePadding="10dp"
-                style="@style/ed_txt"
-                android:autoLink="none"
-                android:inputType="text"
-                android:autoText="false"
-                />
+                android:textColorHint="@color/light_grey" />
 
 
             <TextView
@@ -243,27 +236,27 @@
                 android:text="City"
                 android:textColor="@color/black"
                 android:textSize="8pt" />
+
             <EditText
-                android:id="@+id/ed_city"
+                android:id="@+id/etit_city"
+                style="@style/ed_txt"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:layout_marginTop="10dp"
-                android:hint="Enter City Name"
-                android:textColorHint="@color/light_grey"
+                android:autoLink="none"
+                android:autoText="false"
                 android:background="@drawable/edit_text"
+                android:drawablePadding="10dp"
+                android:focusableInTouchMode="true"
+                android:hint="Enter City Name"
+                android:inputType="text"
+                android:padding="2dp"
+                android:paddingStart="24dp"
+                android:paddingLeft="24dp"
                 android:paddingEnd="15dp"
                 android:paddingRight="15dp"
                 android:singleLine="true"
-                android:padding="2dp"
-                android:focusableInTouchMode="true"
-                android:paddingStart="24dp"
-                android:paddingLeft="24dp"
-                android:drawablePadding="10dp"
-                style="@style/ed_txt"
-                android:autoLink="none"
-                android:inputType="text"
-                android:autoText="false"
-                />
+                android:textColorHint="@color/light_grey" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -275,7 +268,7 @@
                 android:textSize="8pt" />
 
             <EditText
-                android:id="@+id/ed_fromdate"
+                android:id="@+id/etit_date"
                 style="@style/ed_txt"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
@@ -299,30 +292,28 @@
                 android:textColorHint="@color/light_grey" />
 
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:drawableRight="@drawable/ic_call"
+                android:drawablePadding="10dp"
                 android:text="@string/talk_customer"
                 android:textColor="@color/black"
-                android:textSize="8pt"
-                android:layout_marginTop="20dp"
-                android:drawablePadding="10dp"
-                android:layout_marginLeft="10dp"
-                android:drawableRight="@drawable/ic_call"
-                />
+                android:textSize="8pt" />
+
             <Button
-                android:id="@+id/buttn_itsubmit"
+                android:id="@+id/btn_itsubmit"
+                style="@style/bold_tx"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button"
                 android:layout_marginTop="15pt"
                 android:layout_marginBottom="20dp"
+                android:background="@drawable/button"
                 android:text="Submit"
                 android:textColor="@color/white"
-                android:textSize="8pt"
-                style="@style/bold_tx"
-                />
+                android:textSize="8pt" />
 
         </LinearLayout>
     </ScrollView>

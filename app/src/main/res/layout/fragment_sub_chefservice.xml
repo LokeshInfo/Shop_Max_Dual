@@ -14,11 +14,9 @@
         app:popupTheme="@style/AppTheme.PopupOverlay"
         app:title="Customer Details"
         app:titleTextColor="@color/white"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintVertical_bias="0.0"
         app:navigationIcon="@drawable/ic_arrow_back_white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
         />
 
 
@@ -26,11 +24,8 @@
         android:id="@+id/scrll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:layout_marginTop="?actionBarSize"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/patient_toolbar">
+        android:layout_below="@id/its_toolbar"
+        android:fillViewport="true">
 
 
 
